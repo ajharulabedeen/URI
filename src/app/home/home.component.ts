@@ -19,18 +19,16 @@ export class HomeComponent implements OnInit {
   myMsg = 'Hello World!';
 
 
-  activeHome() {
-    if (this.home) {
-      this.home = false;
-      this.top.logFalse();
-    }
-    else if (this.home == false) {
-      this.home = true;
-    }
-    // if(LoginComponent.loggedIn){
-
-    // }
-  }
+  // activeHome() {
+  //   if (this.home) {
+  //     this.home = false;
+  //     this.top.logFalse();
+  //   }
+  //   else if (this.home == false) {
+  //     this.home = true;
+  //   }
+  //   // if(LoginComponent.loggedIn){
+  // }//activeHome
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));

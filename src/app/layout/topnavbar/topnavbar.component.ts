@@ -8,20 +8,33 @@ import { LoginComponent } from 'src/app/login/login/login.component';
 })
 export class TopnavbarComponent implements OnInit {
 
-  login = true;
+  loginButton = true;
+  loginTry = false;
+  loginSuccess = false;
   // login = LoginComponent.loggedIn;
   // static login = true;
 
-  public logFalse() {
-    console.log("Top : " + this.login);
-    this.login = false;
-    console.log("Top : " + this.login);
+  public logginTryToggle() {
+    if (this.loginTry) {
+      this.loginTry = false;
+    } else {
+      this.loginTry = true;
+    }
+  }//logginTryToggle
+
+
+  public logOut() {
+    this.loginSuccess = false;
+    this.loginTry = true;
+    this.loginButton = true;
   }
-  public logTrue() {
-    console.log("Top : " + this.login);
-    this.login = true;
-    console.log("Top : " + this.login);
+
+  public submit() {
+    this.loginSuccess = true;
+    this.loginTry = false;
+    this.loginButton = false;
   }
+
 
   constructor() { }
 
