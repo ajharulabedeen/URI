@@ -2,15 +2,10 @@
   <app-topnavbar></app-topnavbar>
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
+    
     <section class="content-header">
       <section class="content">
-        <h1 *ngIf="home">Home</h1>
-        <!-- <button *ngIf="login" class="btn btn-primary" (click)="activeHome()">Active Home</button> -->
-        <button class="btn btn-primary" (click)="activeHome()">Active Home</button>
-        <br><br>
-        <input [(ngModel)]="myMsg" />
-        <br>
-        <span>{{myMsg}}</span>
+        <h1>Welcome to Home</h1>
       </section>
     </section>
 
@@ -32,12 +27,10 @@
           </div>
           
           <div class="modal-body">
-            ...444444
+            <h3>Modal Body h3</h3>
             <br>
             <br>
-            <br>
-            <br>
-            ...444444
+            <h4>Modal Body h4</h4>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
