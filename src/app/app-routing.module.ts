@@ -10,7 +10,7 @@ import { RegisterComponent } from './public/register/register.component';
 const routes: Routes = [
   // {path: '', redirectTo: 'login', pathMatch: 'full'}
   // {path: '', redirectTo: 'dashboard', pathMatch: 'full'}//working
-  // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },//working
+  // {path: 'about', redirectTo: 'about', pathMatch: 'full'},//not working
   { path: 'about', component: AboutComponent },
   { path: 'news', component: NewsComponent },
   { path: 'events', component: EventsComponent },
