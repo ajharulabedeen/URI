@@ -7,6 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeComponent } from './home/home.component';
 import { LayoutModule } from './layout/layout.module';
 import {FormsModule} from '@angular/forms';
+import { PublicModule } from './public/public.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {FormsModule} from '@angular/forms';
     LoginModule,
     DashboardModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]
