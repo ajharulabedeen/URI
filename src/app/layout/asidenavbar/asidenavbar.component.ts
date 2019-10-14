@@ -8,6 +8,7 @@ import { LoginComponent } from '../../login/login/login.component';
 })
 export class AsidenavbarComponent implements OnInit {
 
+  profile = true;
   loggedIn = LoginComponent.loggedIn;
 
   constructor() { }

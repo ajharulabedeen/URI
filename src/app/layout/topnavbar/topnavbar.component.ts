@@ -11,6 +11,8 @@ export class TopnavbarComponent implements OnInit {
   loginButton = true;
   loginTry = false;
   loginSuccess = false;
+  imageUrl = "assets/dist/img/avatar5.png";
+
   // login = LoginComponent.loggedIn;
   // static login = true;
 

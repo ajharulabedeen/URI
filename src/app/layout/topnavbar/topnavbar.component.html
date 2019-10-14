@@ -33,7 +33,7 @@
           <button class="btn btn-danger">Forgot Password</button>
           <button class="btn btn-warning">Register</button>
         </li> -->
-        <!-- <li *ngIf="loginButton">
+        <!-- <li *ngIf="loginButton"> 
           <button class="btn btn-info" (click)="logginTryToggle()">
             Loggin
           </button>
@@ -43,9 +43,11 @@
         <!-- <li *ngIf="!loginSuccess" class="dropdown user user-menu"> -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="assets/dist/img/images.png" class="user-image" alt="User Image">
+            <img *ngIf="!loginSuccess" src="assets/dist/img/images.png" class="user-image" alt="User Image">
+            <img *ngIf="loginSuccess" src={{imageUrl}} class="user-image" alt="User Image">
+            
             <span *ngIf="!loginSuccess" class="hidden-xs">Loggin</span>
-            <span *ngIf="loginSuccess"class="hidden-xs">Name of The User</span>
+            <span *ngIf="loginSuccess" class="hidden-xs">Name of The User</span>
           </a>
 
           <ul class="dropdown-menu">
@@ -54,7 +56,7 @@
               <img src="assets/dist/img/images.png" class="img-circle" alt="User Image">
             </li>
             <li *ngIf="loginSuccess" class="user-header ">
-              <img src="assets/dist/img/images.png" class="user-image" alt="User Image">
+              <img src={{imageUrl}} class="user-image" alt="User Image">
             </li>
 
 
