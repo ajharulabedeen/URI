@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { throwError, Subject } from 'rxjs';
+import { catchError, tap, subscribeOn } from 'rxjs/operators';
+import { User } from './user.model';
+
 
 export interface AuthResponseData {
   access_token: string;
@@ -12,12 +14,14 @@ export interface AuthResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  user = new Subject<User>();
+
   constructor(private http: HttpClient) { }
 
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'http://127.0.0.1:8000/api/signup ',
+        'http://127.0.0.1:8000/api/signup',
         {
           name: "Test Name",
           email: email,
@@ -26,32 +30,69 @@ export class AuthService {
         }
       )
       .pipe(
-        catchError(errorRes => {
-          // console.log(errorRes.error.errors.email[0]);
-          let errorMessage = 'An unknown error occurred!';
-          // errorMessage = 'This email already taken!';
-          // if (!errorRes.error || !errorRes.error.error) {
-          //   errorMessage = errorRes.error.errors.email[0];
-          //   return throwError(errorMessage);
-          // }
-
-          //working
-          // if (errorRes.error.errors.email[0] === "The email has already been taken.") {
-          if (errorRes.error.errors.email[0].match("The email has already been taken.")) {
-            errorMessage = 'This email already taken!';
-            console.log("ERR : " + errorRes.error.errors.email[0]);
-            errorMessage = errorRes.error.errors.email[0];
-            return throwError(errorMessage);
-          }
-
-          // switch (errorRes.error.error.message) {
-          //   case 'EMAIL_EXISTS':
-          //     errorMessage = 'This email exists already';
-          // }
-
-
-          return throwError(errorMessage);
+        catchError(this.handleError),
+        tap(resData => {
+          return this.handleAuthentication(
+            resData.user,
+            resData.token_type,
+            resData.user,
+            resData.expires_in);
         })
       );
+  }//sing up.
+
+
+  login(email: string, password: string) {
+    return this.http
+      .post<AuthResponseData>(
+        'http://127.0.0.1:8000/api/login',
+        {
+          email: email,
+          password: password,
+        }
+      )
+      .pipe(
+        catchError(this.handleError),
+        tap(resData => {
+          return this.handleAuthentication(
+            resData.user,
+            resData.token_type,
+            resData.user,
+            resData.expires_in);
+        })
+      );
+  }//loggin
+
+
+  private handleError(errorRes: HttpErrorResponse) {
+
+
+    let errorMessage = 'An unknown error occurred!';
+
+    // if (!errorRes.error || !errorRes.error.error) {
+    //   return throwError(errorMessage);
+    // }
+
+    if (errorRes.error.error.match("Email or Password does not exist.")) {
+      errorMessage = 'This email already taken!';
+      // console.log("ERR : " + errorRes.error.errors.email[0]);
+      errorMessage = errorRes.error.error;
+      return throwError(errorMessage);
+    }
+
+    return throwError(errorMessage);
+  }//handleError
+
+  private handleAuthentication(
+    email: string,
+    userId: string,
+    token: string,
+    expiresIn: number
+  ) {
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+    const user = new User(email, userId, token, expirationDate);
+    this.user.next(user);
   }
-}
+
+
+}//main class
