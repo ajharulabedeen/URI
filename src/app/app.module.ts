@@ -6,14 +6,17 @@ import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeComponent } from './home/home.component';
 import { LayoutModule } from './layout/layout.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PublicModule } from './public/public.module';
+import { AuthComponent } from './auth/auth.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,9 @@ import { PublicModule } from './public/public.module';
     DashboardModule,
     LayoutModule,
     FormsModule,
-    PublicModule
+    PublicModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

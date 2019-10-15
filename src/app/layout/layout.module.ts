@@ -4,6 +4,7 @@ import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { AsidenavbarComponent } from './asidenavbar/asidenavbar.component';
 import { FooternavbarComponent } from './footernavbar/footernavbar.component';
 import { SettingsnavbarComponent } from './settingsnavbar/settingsnavbar.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 
 
@@ -15,13 +16,15 @@ import { SettingsnavbarComponent } from './settingsnavbar/settingsnavbar.compone
     TopnavbarComponent,
     AsidenavbarComponent,
     FooternavbarComponent,
-    SettingsnavbarComponent
+    SettingsnavbarComponent,
+    LoadingSpinnerComponent
   ],
   exports: [
     TopnavbarComponent,
     AsidenavbarComponent,
     FooternavbarComponent,
-    SettingsnavbarComponent
+    SettingsnavbarComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class LayoutModule { }

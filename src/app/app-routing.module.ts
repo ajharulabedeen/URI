@@ -5,6 +5,8 @@ import { AboutComponent } from './public/about/about.component';
 import { NewsComponent } from './public/news/news.component';
 import { EventsComponent } from './public/events/events.component';
 import { RegisterComponent } from './public/register/register.component';
+import { LoginComponent } from './login/login/login.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,8 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'events', component: EventsComponent },
   { path: 'register', component: RegisterComponent },
-  // { path: 'home', component: HomeComponent }
+  { path: 'admin_login', component: LoginComponent },
+  { path: 'admin', component: AuthComponent },
   { path: '', component: HomeComponent }
 ];
 
