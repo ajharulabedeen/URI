@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError, Subject } from 'rxjs';
+import { throwError, BehaviorSubject } from 'rxjs';
 import { catchError, tap, subscribeOn } from 'rxjs/operators';
 import { User } from './user.model';
 
@@ -14,7 +14,7 @@ export interface AuthResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient) { }
 
@@ -77,13 +77,11 @@ export class AuthService {
           return this.handleAuthentication(
             resData.user,
             resData.token_type,
-            resData.user,
+            resData.access_token,
             resData.expires_in);
         })
       );
   }//loggin
-
-
 
   //not working; problem: unable to distinguish between login and singuperror.
   private handleError(errorRes: HttpErrorResponse) {
@@ -109,9 +107,12 @@ export class AuthService {
     token: string,
     expiresIn: number
   ) {
+    console.log("New User Created!");
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
+    console.log("New User Created : next");
+
   }
 
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TopnavbarComponent } from '../layout/topnavbar/topnavbar.component';
+import { AuthService } from '../auth/auth.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,19 +9,37 @@ import { TopnavbarComponent } from '../layout/topnavbar/topnavbar.component';
 })
 export class HomeComponent implements OnInit {
 
-  // var home : boolean = false;
-  // private log = new  LoginComponent();
-  constructor() { }
+  isAuthenticated = false;
+  private userSub: Subscription;
 
-  home = false;
-  // login = this.log.getLoginInfo();
-  // login = LoginComponent.loggedIn;
+  constructor(private authService: AuthService) { }
 
   top = new TopnavbarComponent();
   myMsg = 'Hello World!';
 
+  ngOnInit() {
+    window.dispatchEvent(new Event('resize'));
+    document.body.className = 'hold-transition skin-blue sidebar-mini';
+    console.log("Home onInit()");
+    this.userSub = this.authService.user.subscribe(user => {
+    console.log("Auth Subscriber home:");
+      this.isAuthenticated = !!user;
+      console.log(!user);
+      console.log(!!user);
+    });
 
-  // activeHome() {
+  }
+
+  ngOnDestroy() {
+    this.userSub.unsubscribe();
+    document.body.className = '';
+  }
+
+
+}//class
+  
+
+// activeHome() {
   //   if (this.home) {
   //     this.home = false;
   //     this.top.logFalse();
@@ -29,13 +49,3 @@ export class HomeComponent implements OnInit {
   //   }
   //   // if(LoginComponent.loggedIn){
   // }//activeHome
-
-  ngOnInit() {
-    window.dispatchEvent(new Event('resize'));
-    document.body.className = 'hold-transition skin-blue sidebar-mini';
-  }
-
-  ngOnDestroy(): void {
-    document.body.className = '';
-  }
-}//class

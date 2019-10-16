@@ -5,7 +5,8 @@
     
     <section class="content-header">
       <section class="content">
-        <h1>Welcome to Home</h1>
+        <h1 *ngIf="isAuthenticated">Welcome to Home</h1>
+        <!-- <h1 >Welcome to Home</h1> -->
       </section>
     </section>
 
