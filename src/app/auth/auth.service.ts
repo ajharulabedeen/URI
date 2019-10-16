@@ -30,7 +30,17 @@ export class AuthService {
         }
       )
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError),//not working; problem: unable to distinguish between login and singuperror.
+        catchError(errorRes => {
+          let errorMessage = 'An unknown error occurred!';
+          if (errorRes.error.errors.email[0].match("The email has already been taken.")) {
+            errorMessage = 'This email already taken!';
+            console.log("ERR : " + errorRes.error.errors.email[0]);
+            errorMessage = errorRes.error.errors.email[0];
+            return throwError(errorMessage);
+          }
+          return throwError(errorMessage);
+        }),
         tap(resData => {
           return this.handleAuthentication(
             resData.user,
@@ -52,7 +62,17 @@ export class AuthService {
         }
       )
       .pipe(
-        catchError(this.handleError),
+        // catchError(this.handleError),
+        catchError(errorRes => {
+          let errorMessage = 'An unknown error occurred!';
+          if (errorRes.error.error.match("Email or Password does not exist.")) {
+            errorMessage = 'This email already taken!';
+            // console.log("ERR : " + errorRes.error.errors.email[0]);
+            errorMessage = errorRes.error.error;
+            return throwError(errorMessage);
+          }
+          return throwError(errorMessage);
+        }),
         tap(resData => {
           return this.handleAuthentication(
             resData.user,
@@ -64,22 +84,22 @@ export class AuthService {
   }//loggin
 
 
+
+  //not working; problem: unable to distinguish between login and singuperror.
   private handleError(errorRes: HttpErrorResponse) {
-
-
     let errorMessage = 'An unknown error occurred!';
-
-    // if (!errorRes.error || !errorRes.error.error) {
-    //   return throwError(errorMessage);
-    // }
-
     if (errorRes.error.error.match("Email or Password does not exist.")) {
       errorMessage = 'This email already taken!';
       // console.log("ERR : " + errorRes.error.errors.email[0]);
       errorMessage = errorRes.error.error;
       return throwError(errorMessage);
     }
-
+    if (errorRes.error.errors.email[0].match("The email has already been taken.")) {
+      errorMessage = 'This email already taken!';
+      console.log("ERR : " + errorRes.error.errors.email[0]);
+      errorMessage = errorRes.error.errors.email[0];
+      return throwError(errorMessage);
+    }
     return throwError(errorMessage);
   }//handleError
 
