@@ -14,4 +14,4 @@ import { LayoutModule } from '../layout/layout.module';
     LayoutModule
   ]
 })
-export class ProfileModule { }
+export class ProfileModule {}

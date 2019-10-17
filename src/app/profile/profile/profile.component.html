@@ -5,6 +5,10 @@
     <section class="content-header">
       <section class="content ">
         <h1 class="head">Working Profile.</h1>
+        <button class="btn btn-small btn-primary" (click)="editProfile()">
+          Edit
+        </button>
+        <h2 class="head" *ngIf="profileEdit"> Profile Editing Enable.</h2>
       </section>
     </section>
   </div>

@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
   constructor() { }
+  profileEdit = false;
+  
+  public editProfile() {
+    this.profileEdit = !this.profileEdit;
+  }
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
