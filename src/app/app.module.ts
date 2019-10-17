@@ -11,6 +11,8 @@ import { PublicModule } from './public/public.module';
 import { AuthComponent } from './auth/auth.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth.service';
+import { ProfileComponent } from './profile/profile/profile.component';
+import { ProfileModule } from './profile/profile.module';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { AuthService } from './auth/auth.service';
     FormsModule,
     PublicModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]

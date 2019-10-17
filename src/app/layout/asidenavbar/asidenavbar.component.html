@@ -46,8 +46,8 @@
       </li>
       <li>
         <a routerLink="/admin">
-        <i class="fa fa-user-plus" aria-hidden="true"></i>
-        <span>Admin</span>
+          <i class="fa fa-user-plus" aria-hidden="true"></i>
+          <span>Admin</span>
         </a>
       </li>
 
@@ -60,13 +60,14 @@
       </li>
 
       <li class="treeview" *ngIf="isAuthenticated">
-        <!-- <li class="treeview" > -->
-        <a href="#">
+      <li class="treeview">
+        <a routerLink="/profile">
           <i class="fa fa-user" aria-hidden="true"></i>
           <span>Profile</span>
         </a>
         <ul class="treeview-menu">
           <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a></li>
+          <li><button > <i class="fa fa-pencil" aria-hidden="true"></i>Edit</button></li>
 
           <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>Payments</a></li>
           <li><a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Saved</a></li>
