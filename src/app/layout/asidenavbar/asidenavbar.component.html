@@ -17,40 +17,39 @@
     <ul class="sidebar-menu tree" data-widget="tree">
       <!-- <li class="header">MAIN NAVIGATION</li> -->
 
-      <li>
-        <a href="/about">
+
+
+      <li routerLinkActive="active">
+        <a routerLink="/about">
           <i class="fa fa-info-circle" aria-hidden="true"></i>
           <span>About</span>
         </a>
       </li>
       <li>
-        <a href="/news">
+        <a routerLink="/news">
           <i class="fa fa-newspaper-o" aria-hidden="true"></i>
           <span>News</span>
         </a>
       </li>
 
       <li>
-        <a href="/events">
+        <a routerLink="/events">
           <i class="fa fa-calendar" aria-hidden="true"></i>
           <span>Events</span>
         </a>
       </li>
       <li>
-        <a href="/register">
+        <a routerLink="/register">
           <i class="fa fa-user-plus" aria-hidden="true"></i>
           <span>Register</span>
         </a>
       </li>
       <li>
-        <a href="/admin">
-          <i class="fa fa-user-plus" aria-hidden="true"></i>
-          <span>Admin</span>
+        <a routerLink="/admin">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+        <span>Admin</span>
         </a>
       </li>
-
-
-
 
       <!-- start : private sections -->
       <li>
@@ -61,7 +60,7 @@
       </li>
 
       <li class="treeview" *ngIf="isAuthenticated">
-      <!-- <li class="treeview" > -->
+        <!-- <li class="treeview" > -->
         <a href="#">
           <i class="fa fa-user" aria-hidden="true"></i>
           <span>Profile</span>
@@ -73,6 +72,15 @@
           <li><a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Saved</a></li>
         </ul>
       </li>
+
+
+
+
+
+
+
+
+
 
 
       <!-- kept as example for further use. -->

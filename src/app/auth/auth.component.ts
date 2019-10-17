@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -10,12 +10,18 @@ import { AuthService, AuthResponseData } from './auth.service';
   selector: 'app-auth',
   templateUrl: './auth.component.html'
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
 
   constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnInit() {
+    window.dispatchEvent(new Event('resize'));
+    document.body.className = 'hold-transition skin-blue sidebar-mini';
+  }
+
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
