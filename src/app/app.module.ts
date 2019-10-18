@@ -15,14 +15,16 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { ProfileModule } from './profile/profile.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
-         MatSortModule, MatTableModule } from "@angular/material";
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
+         MatSortModule, MatTableModule, MatButtonModule } from "@angular/material";
+import { DataTableComponent } from './data-table/data-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AuthComponent
+    AuthComponent,
+    DataTableComponent
     // AuthService
   ],
   imports: [
@@ -42,7 +44,8 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

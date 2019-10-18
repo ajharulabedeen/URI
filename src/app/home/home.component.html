@@ -2,7 +2,13 @@
   <app-topnavbar></app-topnavbar>
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
-    
+
+
+    <app-data-table></app-data-table>
+
+    <button mat-raised-button color="accent">Click Me</button>
+
+
     <section class="content-header">
       <section class="content">
         <h1 *ngIf="isAuthenticated">Welcome to Home</h1>
@@ -26,7 +32,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          
+
           <div class="modal-body">
             <h3>Modal Body h3</h3>
             <br>
