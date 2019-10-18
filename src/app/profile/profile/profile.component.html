@@ -180,46 +180,278 @@
         </div>
       </div>
     </div>
-    
-    
+
+
     <!--education -->
     <div class="panel-group">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" href="#education">Work History</a>
+            <a data-toggle="collapse" href="#education">Education</a>
           </h4>
         </div>
         <div id="education" class="panel-collapse collapse">
           <div class="panel-body">
-            <h1>Education</h1>
+            <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#modal_education">
+              Add New
+            </button>
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th>Index</th>
+                        <th>Degree Name</th>
+                        <th>Institut Name</th>
+                        <th>Passing Year</th>
+                        <th>Result</th>
+                        <th>Operation</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>SSC</td>
+                        <td>Sahapur High School</td>
+                        <td>11-7-2014</td>
+                        <td><span class="label label-success">A+</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-primary">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>HSC</td>
+                        <td>S M Collage</td>
+                        <td>11-7-2016</td>
+                        <td><span class="label label-success">A-</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-primary">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>BSC</td>
+                        <td>Green University of Bangladesh</td>
+                        <td>11-7-2020</td>
+                        <td><span class="label label-success">A+</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-primary">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Phd</td>
+                        <td>GUB</td>
+                        <td>11-7-2014</td>
+                        <td><span class="label label-success">On Going..</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-primary">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
+            </div>
           </div>
-          <div class="panel-footer">Work History</div>
+          <div class="panel-footer">Education</div>
         </div>
       </div>
     </div>
 
 
-<!-- Work History History -->
+    <!-- Work History History -->
     <div class="panel-group">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" href="#work_history">Education</a>
+            <a data-toggle="collapse" href="#work_history">Work History</a>
           </h4>
         </div>
         <div id="work_history" class="panel-collapse collapse">
           <div class="panel-body">
-            <h1>Work History</h1>
+            <!-- ton trigger modal -->
+            <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#modal_work">
+              Add New
+            </button>
+
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th>Index</th>
+                        <th>Instition Name</th>
+                        <th>Type</th>
+                        <th>Role</th>
+                        <th>Started</th>
+                        <th>Leave</th>
+                        <th>Current Status</th>
+                        <th>Operation</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>NEOM</td>
+                        <td>Private</td>
+                        <td>CEO</td>
+                        <td>11-7-2014</td>
+                        <td>Working</td>
+                        <td><span class="label label-success">Working</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-primary">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>NEOM</td>
+                        <td>Private</td>
+                        <td>CEO</td>
+                        <td>11-7-2014</td>
+                        <td>Working</td>
+                        <td><span class="label label-success">Working</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-primary">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>NEOM</td>
+                        <td>Private</td>
+                        <td>CEO</td>
+                        <td>11-7-2014</td>
+                        <td>Working</td>
+                        <td><span class="label label-success">Working</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-primary">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="panel-footer">Work History</div>
+            </div>
           </div>
-          <div class="panel-footer">Work History</div>
         </div>
+
+
+
+
+
+
+        <!-- Modal  work-->
+        <div class="modal fade" id="modal_work" tabindex="-1" role="dialog" aria-labelledby="modal_workLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal_workLabel">New Work History</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Institute Name</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Type</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Role</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Stated</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Leave</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Current Status</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add New</button>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <!-- <app-footernavbar></app-footernavbar> -->
+          <!-- <app-settingsnavbar></app-settingsnavbar> -->
+        </div>
+
+
+        <!-- Modal  Education-->
+        <div class="modal fade" id="modal_education" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal_educationLabel">New Education</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group">
+                  <label>Degre Name</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Institute Name</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Passing Year</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                  <label>Result</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Add New</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <!-- <app-footernavbar></app-footernavbar> -->
+          <!-- <app-settingsnavbar></app-settingsnavbar> -->
+        </div>
+
+
+
+        <!-- <app-footernavbar></app-footernavbar> -->
       </div>
-    </div>
-
-
-    <!-- <app-footernavbar></app-footernavbar> -->
-    <!-- <app-settingsnavbar></app-settingsnavbar> -->
-  </div>
-  <!-- <app-footernavbar></app-footernavbar> -->
-</div>
