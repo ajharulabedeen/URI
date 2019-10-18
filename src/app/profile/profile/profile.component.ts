@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   constructor() { }
   profileEdit = false;
-  
+
   public editProfile() {
     this.profileEdit = !this.profileEdit;
   }
@@ -17,4 +17,6 @@ export class ProfileComponent implements OnInit {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
+
+
 }

@@ -49,7 +49,8 @@ export class AuthComponent implements OnInit {
         // console.log(resData);
         // console.log(resData.access_token);
         this.isLoading = false;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/timeline']);
+        // this.router.navigate(['/dashboard']);
         // this.router.navigate(['/home']);
       },
       errorMessage => {
