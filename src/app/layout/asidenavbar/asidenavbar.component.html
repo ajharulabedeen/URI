@@ -44,7 +44,7 @@
           <span>Register</span>
         </a>
       </li>
-      <li>
+      <li *ngIf="!isAuthenticated">
         <a routerLink="/admin">
           <!-- <i class="fa fa-user-plus" aria-hidden="true"></i> -->
           <i class="fa fa-sign-in" aria-hidden="true"></i>

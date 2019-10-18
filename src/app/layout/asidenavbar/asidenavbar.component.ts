@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AsidenavbarComponent implements OnInit, OnDestroy {
 
-  isAuthenticated = false;
+  isAuthenticated = true;//have to make false
   private userSub: Subscription;
 
   profile = true;

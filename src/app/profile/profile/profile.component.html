@@ -4,10 +4,9 @@
   <div class="content-wrapper">
 
 
-    <section class="content-header">
+    <!-- <section class="content-header">
       <h1>
         Profile
-        <!-- <span *ngIf="profileEdit" class="badge badge-pill badge-warning">Profile Editing Enable</span> -->
         <span *ngIf="profileEdit" class="badge badge-pill badge-danger">Profile Editing Enable</span>
       </h1>
       <ol class="breadcrumb">
@@ -15,9 +14,208 @@
           Edit
         </button>
       </ol>
-    </section>
+    </section> -->
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>
+          Profile
+          <span *ngIf="profileEdit" class="label label-warning">Profile Editing Enable</span>
+        </h3>
+      </div>
+      <div class="col-md-4 offset-md-4">
+        <h3><span class="label label-success">Mr. Hunkipanki</span></h3>
+      </div>
+      <!-- <div class="col-md-4 col-md-4 offset-md-8"> -->
+      <div class="col-lg-4 col-lg-4 offset-lg-8">
+        <h5>
+          <button class="btn btn-small btn-primary" (click)="editProfile()">
+            Edit
+          </button>
+        </h5>
+      </div>
+    </div>
+
+    <!-- photo -->
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-4 offset-md-4">
+        <!-- <img class="profile-user-img img-responsive img-circle" src="/assets/dist/img/user4-128x128.jpg" -->
+        <img class="img-responsive" src="/assets/dist/img/photo3.jpg" alt="User profile picture">
+        <h5 *ngIf="profileEdit"><span class="label label-success">Edit Photo</span></h5>
+      </div>
+    </div>
 
 
+    <!-- profile Basic Info -->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse1">Profile Basic Info</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="box-body">
+
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Enter Ur Name...">
+              </div>
+
+              <div class="form-group">
+                <label>Batch</label>
+                <input type="text" class="form-control" placeholder="Enter Ur Batch...">
+              </div>
+
+              <div class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" placeholder="Enter Ur Batch...">
+              </div>
+
+              <div class="form-group">
+                <label>Passing Year</label>
+                <input type="text" class="form-control" placeholder="Enter Ur Batch...">
+              </div>
+
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" placeholder="Enter Ur Batch...">
+              </div>
+
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control" placeholder="Enter Ur Batch...">
+              </div>
+
+              <!-- Date -->
+              <div class="form-group">
+                <label>Date:</label>
+
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="date" class="form-control pull-right" id="datepicker">
+                </div>
+                <!-- /.input group -->
+              </div>
+
+              <div class="form-group">
+                <label>Research Interest</label>
+                <textarea class="form-control" rows="3" placeholder="research Interest ...">
+                        </textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Skills</label>
+                <textarea class="form-control" rows="3" placeholder="Skills ...">
+                        </textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Address (Present)</label>
+                <textarea class="form-control" rows="3" placeholder="Present Adress">
+                  </textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Address (Permanent)</label>
+                <textarea class="form-control" rows="3" placeholder=" Permanenr Adress">
+
+                  </textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Social Media Links (FaceBook, LinkedIn)</label>
+                <input type="text" class="form-control" placeholder="Enter Ur Batch...">
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group">
+                <label>Gender</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                    Male
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Female
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Other
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">End Basic Info.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About me -->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#about_me">About Me</a>
+          </h4>
+        </div>
+        <div id="about_me" class="panel-collapse collapse">
+          <div class="panel-body">
+            <textarea class="form-control" rows="3" placeholder="Enter ...">
+                    I am slow waker but never come back.
+            </textarea>
+          </div>
+          <div class="panel-footer">About Me</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!--education -->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#education">Work History</a>
+          </h4>
+        </div>
+        <div id="education" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h1>Education</h1>
+          </div>
+          <div class="panel-footer">Work History</div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Work History History -->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#work_history">Education</a>
+          </h4>
+        </div>
+        <div id="work_history" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h1>Work History</h1>
+          </div>
+          <div class="panel-footer">Work History</div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- <app-footernavbar></app-footernavbar> -->
