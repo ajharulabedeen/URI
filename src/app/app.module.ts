@@ -45,7 +45,8 @@ import { DataTableComponent } from './data-table/data-table.component';
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
