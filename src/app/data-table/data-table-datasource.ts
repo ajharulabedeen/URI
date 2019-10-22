@@ -72,6 +72,7 @@ const EXAMPLE_DATA: DataTableItem[] = [
   {id: 27, name: 'Calcium'},
   {id: 28, name: 'Calcium'},
   {id: 29, name: 'Calcium'},
+  {id: 30, name: 'Calcium'},
   {id: 30, name: 'Calcium'}
 ];
 
