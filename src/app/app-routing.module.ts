@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { TimelineComponent } from './profile/timeline/timeline.component';
+import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-test.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   // { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'timeline', component: TimelineComponent }
+  { path: 'timeline', component: TimelineComponent },
+  { path: 'file', component: FileUploaderTestComponent },
 ];
 
 @NgModule({

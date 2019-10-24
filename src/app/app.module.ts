@@ -18,13 +18,15 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
          MatSortModule, MatTableModule, MatButtonModule } from "@angular/material";
 import { DataTableComponent } from './data-table/data-table.component';
+import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AuthComponent,
-    DataTableComponent
+    DataTableComponent,
+    FileUploaderTestComponent
     // AuthService
   ],
   imports: [
