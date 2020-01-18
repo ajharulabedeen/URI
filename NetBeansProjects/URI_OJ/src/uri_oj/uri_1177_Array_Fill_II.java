@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author G7
  */
-public class uri_1178_Array_Fill_II {
+public class uri_1177_Array_Fill_II {
  public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
         int t;
